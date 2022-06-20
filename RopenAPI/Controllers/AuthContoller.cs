@@ -32,7 +32,7 @@ namespace RopenAPI.Controllers
             string RandomDigits;
             var random = new Random();
             string s = string.Empty;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 9; i++)
                 s = String.Concat(s, random.Next(10).ToString());
             RandomDigits = s;
             returnobject["userId"] = RandomDigits;
@@ -69,24 +69,24 @@ namespace RopenAPI.Controllers
 
         public IActionResult login(LoginInfo info)
         {
-            Thread.Sleep(5);
-            Response.Headers.Append("report-to", "{\"group\":\"network-errors\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://ncs.roblox.com/upload}]}");
-            Response.Headers.Append("nel", "{\"report_to\":\"network-errors\",\"max_age\":604800,\"success_fraction\":0.001,\"failure_fraction\":1}");
-            Response.Headers.Append("roblox-machine-id", "CHI1-WEB3816");
-            Response.Headers.Append("p3p", "CP=\"CAO DSP COR CURa ADMa DEVa OUR IND PHY ONL UNI COM NAV INT DEM PRE\"");
-            Response.Headers.Append("cache-control", "max-age=120, private");
-            Response.Headers.Append("access-control-allow-origin", "https://www.roblox.com");
-            Response.Headers.Append("access-control-allow-credentials", "true");
-            Response.Headers.Append("strict-transport-security", "max-age=3600");
-            Response.Headers.Append("x-frame-options", "SAMEORIGIN");
+            Response.Headers.Append("cache-control", "no-cache");
             Response.Headers.Append("pragma", "no-cache");
             Response.Headers.Append("expires", "-1");
+            Response.Headers.Append("vary", "Accept-Encoding");
+            Response.Headers.Append("access-control-allow-origin", "https://www.roblox.com");
+            Response.Headers.Append("access-control-allow-credentials", "true");
+            Response.Headers.Append("x-frame-options", "SAMEORIGIN");
+            Response.Headers.Append("strict-transport-security", "max-age=3600");
+            Response.Headers.Append("roblox-machine-id", "CHI1-WEB3816");
+            Response.Headers.Append("p3p", "CP=\"CAO DSP COR CURa ADMa DEVa OUR IND PHY ONL UNI COM NAV INT DEM PRE\"");
+            Response.Headers.Append("report-to", "{\"group\":\"network-errors\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://ncs.roblox.com/upload\"}]}");
+            Response.Headers.Append("nel", "{\"report_to\":\"network-errors\",\"max_age\":604800,\"success_fraction\":0.001,\"failure_fraction\":1}");
             // Response.Headers.Append("content-type", "application/json");
 
             string response = "";
             try
             {
-                string token = Crypt.Crypt.GenerateUniqueHexString(777);
+                string token = Crypt.Crypt.GenerateUniqueHexString(778);
                 var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
                 IMongoDatabase db = dbClient.GetDatabase("roblox");
                 var users = db.GetCollection<BsonDocument>("users");
