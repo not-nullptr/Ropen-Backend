@@ -859,26 +859,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Shaun\\.nuget\\packages\\": {}
+    "/home/shaun/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Shaun\\source\\repos\\RopenAPI\\RopenAPI\\RopenAPI.csproj",
+      "projectUniqueName": "/home/shaun/Ropen-Backend/RopenAPI/RopenAPI.csproj",
       "projectName": "RopenAPI",
-      "projectPath": "C:\\Users\\Shaun\\source\\repos\\RopenAPI\\RopenAPI\\RopenAPI.csproj",
-      "packagesPath": "C:\\Users\\Shaun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shaun\\source\\repos\\RopenAPI\\RopenAPI\\obj\\",
+      "projectPath": "/home/shaun/Ropen-Backend/RopenAPI/RopenAPI.csproj",
+      "packagesPath": "/home/shaun/.nuget/packages/",
+      "outputPath": "/home/shaun/Ropen-Backend/RopenAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Shaun\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/shaun/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -932,7 +930,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.301/RuntimeIdentifierGraph.json"
       }
     }
   }
