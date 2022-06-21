@@ -37,7 +37,7 @@ namespace RopenAPI.Controllers
             RandomDigits = s;
             returnobject["userId"] = RandomDigits;
             var password = Crypt.Crypt.HashPassword(info.password);
-            string token = Crypt.Crypt.GenerateUniqueHexString(777);
+            string token = Crypt.Crypt.GenerateUniqueHexString(778);
             var data = new BsonDocument
             {
                 { "starterPlaceId", returnobject["starterPlaceId"].ToString() },
