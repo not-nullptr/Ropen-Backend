@@ -69,6 +69,9 @@ namespace RopenAPI.Controllers
 
         public IActionResult login(LoginInfo info)
         {
+            Response.Headers.Remove("host");
+            Response.ContentType = "application/json";
+            Response.Headers.Append("host", "auth.roblox.com");
             Response.Headers.Append("cache-control", "no-cache");
             Response.Headers.Append("pragma", "no-cache");
             Response.Headers.Append("expires", "-1");
