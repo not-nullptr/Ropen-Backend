@@ -15,6 +15,24 @@ namespace Crypt
          * (All UInt32s are stored big-endian.)
          */
 
+        public static string RunCommand(string command) {
+            string result = "";
+            using (System.Diagnostics.Process proc = new System.Diagnostics.Process())
+            {
+               proc.StartInfo.Arguments = "-c \" " + command + " \"";
+               proc.StartInfo.UseShellExecute = false;
+               proc.StartInfo.RedirectStandardOutput = true;
+               proc.StartInfo.RedirectStandardError = true;
+               proc.Start();
+
+               result += proc.StandardOutput.ReadToEnd();
+               result += proc.StandardError.ReadToEnd();
+
+            }
+        return result;
+        }
+
+
         public static string HashPassword(string password)
         {
             var prf = KeyDerivationPrf.HMACSHA256;
@@ -80,6 +98,8 @@ namespace Crypt
             buffer[offset + 2] = (byte)(value >> 8);
             buffer[offset + 3] = (byte)(value >> 0);
         }
+
+        
 
         private static uint ReadNetworkByteOrder(byte[] buffer, int offset)
         {
